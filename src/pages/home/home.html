@@ -1,0 +1,29 @@
+<!--<ion-header>
+    <ion-navbar>
+        <ion-title>
+            Ionic Blank
+        </ion-title>
+    </ion-navbar>
+</ion-header>-->
+
+<ion-content>
+    <ion-list>
+        <ion-list-header>
+            Distance maximum
+            <ion-badge item-end>{{distance}}</ion-badge>
+        </ion-list-header>
+        <ion-item>
+            <ion-range [(ngModel)]="distance" min="1" max="1000" step="1" debounce="10" (ionChange)="setMaxRadius(distance)" (ionBlur)="getRandomCity()">
+                <ion-icon range-left small name="bicycle"></ion-icon>
+                <ion-icon range-right name="car"></ion-icon>
+            </ion-range>
+        </ion-item>
+    </ion-list>
+
+    <ion-fab center bottom>
+        <button ion-fab color="primary">GO</button>
+    </ion-fab>
+
+    <div #map id="map"></div>
+
+</ion-content>
